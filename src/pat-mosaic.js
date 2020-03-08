@@ -14,6 +14,7 @@ define(['pat-base'], function(Base) {
       for (var i = 0; i < this.max_cols - 1; i++) {
         el_break = document.createElement('span');
         el_break.setAttribute('class', 'pat-mosaic__break');
+        el_break.setAttribute('style', 'order: ' + (i+1));
         el.appendChild(el_break);
       }
 
