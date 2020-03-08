@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>pat-mosaic demo</title>
+    <link rel="stylesheet/less" type="text/css" href="./src/pattern.less" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
+    <script data-main="main" src="./node_modules/requirejs/require.js"></script>
+    <style type="text/css" media="screen">
+      .pat-mosaic__item {
+        border: 1px solid black;
+        background-color: lightgreen;
+        margin-bottom: 1em;
+      }
+    </style>
+  </head>
+  <body role="document">
+
+    <h1>pat-mosaic demo</h1>
+
+    <section class="pat-mosaic">
+      <article class="pat-mosaic__item">1</article>
+      <article class="pat-mosaic__item">2</article>
+      <article class="pat-mosaic__item">3</article>
+      <article class="pat-mosaic__item">4</article>
+      <article class="pat-mosaic__item">5</article>
+      <article class="pat-mosaic__item">6</article>
+      <article class="pat-mosaic__item">7</article>
+      <article class="pat-mosaic__item">8</article>
+      <article class="pat-mosaic__item">9</article>
+      <article class="pat-mosaic__item">10</article>
+    </section>
+
+    <script charset="utf-8">
+      function getH() {
+        var min = 10;
+        var max = 300 - min;
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+        return min + Math.floor(Math.random() * Math.floor(max));
+      }
+      document.querySelectorAll('.pat-mosaic__item').forEach(function (it) {
+          it.style.height = getH() + "px";
+      });
+    </script>
+
+  </body>
+</html>
