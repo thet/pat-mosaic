@@ -10,16 +10,54 @@
 .pat-mosaic {
   display: flex;
   flex-flow: column wrap;
+  align-content: space-between;
   height: 500vh; // just something likely not too small as initial value.
 }
-.pat-mosaic--3-col {
-  &::before,
-  &::after {
-    content: "";
-    flex-basis: 100%;
-    width: 0;
+
+.pat-mosaic__break {
+  display: none;
+  flex-basis: 100%;
+  width: 0;
+  margin: 0;
+  &:nth-child(1) {
+    order: 1;
+  }
+  &:nth-child(2) {
     order: 2;
   }
+  &:nth-child(3) {
+    order: 3;
+  }
+  &:nth-child(4) {
+    order: 4;
+  }
+  &:nth-child(5) {
+    order: 5;
+  }
+  &:nth-child(6) {
+    order: 6;
+  }
+  &:nth-child(7) {
+    order: 7;
+  }
+  &:nth-child(8) {
+    order: 8;
+  }
+  &:nth-child(9) {
+    order: 9;
+  }
+  &:nth-child(10) {
+    order: 10;
+  }
+  &:nth-child(11) {
+    order: 11;
+  }
+  &:nth-child(12) {
+    order: 12;
+  }
+}
+
+.pat-mosaic--3-col {
   .pat-mosaic__item {
     width: @col3-sizer;
     &:nth-child(3n + 1) {
@@ -30,6 +68,12 @@
     }
     &:nth-child(3n) {
       order: 3;
+    }
+  }
+  .pat-mosaic__break {
+    &:nth-of-type(1),
+    &:nth-of-type(2) {
+      display: block;
     }
   }
 }
