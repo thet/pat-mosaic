@@ -21,10 +21,11 @@ define(['pat-base'], function(Base) {
 
       // calculate heights after window resize
       window.addEventListener('resize', function (e) {
+        this.$el[0].classList.remove('pat-mosaic--layout-done');
         if (this.current_resize !== null) {
           window.clearTimeout(this.current_resize);
         }
-        window.setTimeout(this.calculate_heights, 200);
+        window.setTimeout(this.calculate_heights.bind(this), 200);
       }.bind(this));
     },
 
@@ -42,6 +43,7 @@ define(['pat-base'], function(Base) {
         }
       });
       this.$el[0].style.height = max_height + "px";
+      this.$el[0].classList.add('pat-mosaic--layout-done');
     },
 
   });
