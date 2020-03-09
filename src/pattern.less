@@ -24,6 +24,30 @@
   margin: 0;
 }
 
+.pat-mosaic--1-col {
+  .pat-mosaic__item {
+    width: @col1-sizer;
+    order: 1;
+  }
+}
+
+.pat-mosaic--2-col {
+  .pat-mosaic__item {
+    width: @col2-sizer;
+    &:nth-child(2n + 1) {
+      order: 1;
+    }
+    &:nth-child(2n) {
+      order: 2;
+    }
+  }
+  .pat-mosaic__break {
+    &:nth-of-type(1) {
+      display: block;
+    }
+  }
+}
+
 .pat-mosaic--3-col {
   .pat-mosaic__item {
     width: @col3-sizer;
@@ -45,6 +69,51 @@
   }
 }
 
-.pat-mosaic {
-  .pat-mosaic--3-col; // default layout
+.pat-mosaic--4-col {
+  .pat-mosaic__item {
+    width: @col4-sizer;
+    &:nth-child(4n + 1) {
+      order: 1;
+    }
+    &:nth-child(4n + 2) {
+      order: 2;
+    }
+    &:nth-child(4n + 3) {
+      order: 3;
+    }
+    &:nth-child(4n) {
+      order: 4;
+    }
+  }
+  .pat-mosaic__break {
+    &:nth-of-type(1),
+    &:nth-of-type(2),
+    &:nth-of-type(3) {
+      display: block;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .pat-mosaic {
+    .pat-mosaic--1-col;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 900px) {
+  .pat-mosaic {
+    .pat-mosaic--2-col;
+  }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1300px) {
+  .pat-mosaic {
+    .pat-mosaic--3-col;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .pat-mosaic {
+    .pat-mosaic--4-col;
+  }
 }
