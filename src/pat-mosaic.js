@@ -42,6 +42,8 @@ define(['pat-base'], function(Base) {
       } else {
         // 1-column layout. nothing to do.
         this.$el[0].style.height = null;
+        // Done.
+        this.$el[0].classList.add('pat-mosaic--layout-done');
         return;
       }
 

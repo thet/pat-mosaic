@@ -9,10 +9,24 @@
 @pat-mosaic-initial-height: 500vh;
 
 .pat-mosaic {
+  overflow: hidden;
+  height: 0;
+}
+.pat-mosaic__container {
+  height: @pat-mosaic-initial-height;
+}
+.pat-mosaic--layout-done .pat-mosaic__container {
+  height: 100%;
+}
+
+.pat-mosaic__container {
   display: flex;
   flex-flow: column wrap;
   align-content: space-between;
-  height: @pat-mosaic-initial-height;
+}
+
+.pat-mosaic__item {
+  box-sizing: border-box;
 }
 
 .pat-mosaic__break {
@@ -33,8 +47,10 @@
 
 .pat-mosaic--1-col {
   .pat-mosaic {
-    flex-flow: column;
     height: auto;
+  }
+  .pat-mosaic__container {
+    flex-flow: column;
   }
   .pat-mosaic__item {
     width: @col1-sizer;
