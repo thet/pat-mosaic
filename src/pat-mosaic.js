@@ -36,10 +36,11 @@ define(['pat-base'], function(Base) {
       var order_items = {};
       this.$el[0].querySelectorAll('.pat-mosaic__item').forEach(function (it) {
         var style = getComputedStyle(it);
+        var key = "" + style.order;
         if (! order_items[style.order]) {
-          order_items[style.order] = [];
+          order_items[key] = [];
         }
-        order_items[style.order].push(it);
+        order_items[key].push(it);
       });
 
       // Calculate gap between two columns.
@@ -58,7 +59,7 @@ define(['pat-base'], function(Base) {
           it.style.marginBottom = gap + 'px'; // Same margin as gab btw columns.
           var style = getComputedStyle(it);
           var height = it.getBoundingClientRect().height + parseInt(style.marginTop, 10) + gap;
-          heights[style.order] = (heights[style.order] || 0) + height;
+          heights[key] = (heights[key] || 0) + height;
         });
       });
       Object.values(heights).forEach(function (val) {
