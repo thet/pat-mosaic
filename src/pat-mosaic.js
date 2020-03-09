@@ -45,6 +45,7 @@ define(['pat-base'], function(Base) {
         return;
       }
 
+      // Set correct container height
       var heights = {};
       var max_height = 0;
       Object.keys(order_items).forEach(function (key) {
@@ -61,6 +62,8 @@ define(['pat-base'], function(Base) {
         }
       });
       this.$el[0].style.height = max_height + "px";
+
+      // Done.
       this.$el[0].classList.add('pat-mosaic--layout-done');
     },
 
