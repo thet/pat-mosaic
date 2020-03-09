@@ -1,20 +1,18 @@
 @col1-sizer: 100%;
-@col2-sizer: 47%;
+@col2-sizer: 48%;
 @col3-sizer: 32%;
 @col4-sizer: 24%;
+
+// Set this to a value higher than the resulting block layout will be.
+// Drawback is that subsequent content is moved down and will only be moved up
+// after JS has done the height calculation.
+@pat-mosaic-initial-height: 500vh;
 
 .pat-mosaic {
   display: flex;
   flex-flow: column wrap;
   align-content: space-between;
-  height: 500vh; // just something likely not too small as initial value.
-}
-.pat-mosaic__item {
-  opacity: 0;
-}
-.pat-mosaic--layout-done .pat-mosaic__item {
-  transition: opacity 0.5s ease;
-  opacity: 1;
+  height: @pat-mosaic-initial-height;
 }
 
 .pat-mosaic__break {
