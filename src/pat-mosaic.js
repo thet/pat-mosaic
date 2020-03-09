@@ -39,6 +39,10 @@ define(['pat-base'], function(Base) {
         var rect1 = order_items["1"][0].getBoundingClientRect();
         var rect2 = order_items["2"][0].getBoundingClientRect();
         gap = rect2.left - rect1.right;
+      } else {
+        // 1-column layout. nothing to do.
+        this.$el[0].style.height = null;
+        return;
       }
 
       var heights = {};

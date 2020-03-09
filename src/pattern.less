@@ -23,6 +23,10 @@
 }
 
 .pat-mosaic--1-col {
+  .pat-mosaic {
+    flex-flow: column;
+    height: auto;
+  }
   .pat-mosaic__item {
     width: @col1-sizer;
     order: 1;
@@ -93,25 +97,17 @@
 }
 
 @media screen and (max-width: 500px) {
-  .pat-mosaic {
-    .pat-mosaic--1-col;
-  }
+  .pat-mosaic--1-col;
 }
 
 @media screen and (min-width: 501px) and (max-width: 900px) {
-  .pat-mosaic {
-    .pat-mosaic--2-col;
-  }
+  .pat-mosaic--2-col;
 }
 
 @media screen and (min-width: 901px) and (max-width: 1300px) {
-  .pat-mosaic {
-    .pat-mosaic--3-col;
-  }
+  .pat-mosaic--3-col;
 }
 
 @media screen and (min-width: 1300px) {
-  .pat-mosaic {
-    .pat-mosaic--4-col;
-  }
+  .pat-mosaic--4-col;
 }
