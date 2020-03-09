@@ -4,19 +4,8 @@ define(['pat-base'], function(Base) {
     name: 'mosaic',
     trigger: '.pat-mosaic',
     current_resize: null,
-    max_cols: 4,
 
     init: function() {
-
-      // Insert column break elements.
-      var el = this.$el[0];
-      var el_break = null;
-      for (var i = 0; i < this.max_cols - 1; i++) {
-        el_break = document.createElement('span');
-        el_break.setAttribute('class', 'pat-mosaic__break');
-        el_break.setAttribute('style', 'order: ' + (i+1));
-        el.appendChild(el_break);
-      }
 
       this.calculate_heights();
 
