@@ -1,7 +1,13 @@
+// column sizes
 @col1-sizer: 100%;
 @col2-sizer: 48%;
 @col3-sizer: 32%;
 @col4-sizer: 24%;
+
+// breakpoints
+@screen-xs-max: 500px;
+@screen-sm-max: 900px;
+@screen-md-max: 1300px;
 
 // Set this to a value higher than the resulting block layout will be.
 // Drawback is that subsequent content is moved down and will only be moved up
@@ -121,18 +127,18 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: @screen-xs-max) {
   .pat-mosaic--1-col;
 }
 
-@media screen and (min-width: 501px) and (max-width: 900px) {
+@media screen and (min-width: (@screen-xs-max + 1)) and (max-width: @screen-sm-max) {
   .pat-mosaic--2-col;
 }
 
-@media screen and (min-width: 901px) and (max-width: 1300px) {
+@media screen and (min-width: (@screen-sm-max + 1)) and (max-width: @screen-md-max) {
   .pat-mosaic--3-col;
 }
 
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: (@screen-md-max + 1)) {
   .pat-mosaic--4-col;
 }
