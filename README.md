@@ -2,9 +2,11 @@
 
 A [Patternslib](http://patternslib.com) pattern.
 
-Layout pattern which does a masonry like layout, popularized by David Desandro and his Masonry libaray ( https://masonry.desandro.com/ - Kudos to him!).
+Masonry [1] layout library mainly done with CSS and minimal JavaScript, based on an article by Tobias Ahlin [2].
 
-This one is based on CSS layout and some minimal JavaScript to set the height of the container properly.
+You can do some modifications via LESS variables (breakpoints, column widths).
+For customization see ``./src/pattern.less``.
 
-Based on: https://tobiasahlin.com/blog/masonry-with-css/
+[1] https://masonry.desandro.com/ by David Desandro
 
+[2] https://tobiasahlin.com/blog/masonry-with-css/
